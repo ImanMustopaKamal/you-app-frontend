@@ -11,6 +11,7 @@ export default function Register() {
   const router = useRouter();
 
   const [show, setShow] = useState([false, false]);
+  const [isDisabled, setDisabled] = useState(true);
 
   const onToggle = (number: number) => {
     const updatedShow = [...show];
@@ -44,6 +45,7 @@ export default function Register() {
         onToggle={() => onToggle(1)}
       />
       <Button
+        disabled={isDisabled}
         className={cn("btn-primary mt-6")}
         variant={"primary"}
         size={"xl"}

@@ -11,19 +11,25 @@ export default function Login() {
   const router = useRouter();
 
   const [show, setShow] = useState(false);
+  const [isDisabled, setDisabled] = useState(true);
 
   return (
     <div className="flex flex-col items-center justify-center gap-4">
       <h1 className="mb-4 w-full text-white text-[24px] font-[700] ml-[24px]">
-        Santika
+        Login
       </h1>
       <Input
         className={cn("w-[327px] h-[51px]")}
         type="email"
         placeholder="Enter Username/Email"
       />
-      <InputPassword placeholder="Enter Password" isShow={show} onToggle={() => setShow(!show)} />
+      <InputPassword
+        placeholder="Enter Password"
+        isShow={show}
+        onToggle={() => setShow(!show)}
+      />
       <Button
+        disabled={isDisabled}
         className={cn("btn-primary mt-6")}
         variant={"primary"}
         size={"xl"}
